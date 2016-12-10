@@ -1,11 +1,11 @@
 <?php
 
-namespace CleaniqueCoders\Http\Controllers;
+namespace CleaniqueCoders\Subscriptions\Http\Controllers;
 
 use Auth;
 use Carbon\Carbon;
-use CleaniqueCoders\Subscription;
-use CleaniqueCoders\SubscriptionUser;
+use CleaniqueCoders\Subscriptions\Subscription;
+use CleaniqueCoders\Subscriptions\SubscriptionUser;
 use Illuminate\Http\Request;
 
 class SubscriptionController extends Controller
