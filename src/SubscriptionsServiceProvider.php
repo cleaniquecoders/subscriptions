@@ -15,6 +15,8 @@ class SubscriptionsServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
 
+        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/resources/views' => resource_path('views/vendor/subscriptions'),
