@@ -17,7 +17,7 @@ CleaniqueCoders\Subscriptions\SubscriptionsServiceProvider::class,
 Register Subscriptions Middleware in `app\Http\Kernel.php`
 
 ```php
-'subscription' => \Splate\Http\Middleware\PackageSubscription::class,
+'subscription' => \CleaniqueCoders\Subscriptions\Http\Middleware\PackageSubscription::class,
 ```
 
 Publish package configurations and views:
