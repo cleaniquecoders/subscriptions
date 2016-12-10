@@ -1,6 +1,6 @@
 <?php
 
-use CleaniqueCoders\Subscriptions\Subscriptions;
+use CleaniqueCoders\Subscriptions\Subscriptions\Subscription;
 use Illuminate\Database\Seeder;
 
 class PackageSeeder extends Seeder
@@ -44,9 +44,9 @@ class PackageSeeder extends Seeder
                 'meta' => [],
             ],
         ];
-        Subscriptions::truncate();
+        Subscription::truncate();
         foreach ($list as $key => $value) {
-            Subscriptions::create($value);
+            Subscription::create($value);
         }
         $this->command->info('Subscriptions successfully seeded.');
     }
