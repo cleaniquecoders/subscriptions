@@ -4,7 +4,6 @@ namespace CleaniqueCoders\Subscriptions\Http\Middleware;
 
 use Auth;
 use Carbon\Carbon;
-use CleaniqueCoders\Subscriptions\PackageUser;
 use Closure;
 
 class PackageSubscription

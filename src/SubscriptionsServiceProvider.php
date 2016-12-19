@@ -13,16 +13,21 @@ class SubscriptionsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
-
-        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
-
         if ($this->app->runningInConsole()) {
+
+            $this->loadMigrationsFrom(dirname(__FILE__) . '/database/migrations/');
+
+            if ($this->app->environment('local', 'staging')) {
+                $this->commands([
+                    \CleaniqueCoders\Subscription\Console\Commands\Subscription::class,
+                ]);
+            }
+
             $this->publishes([
-                __DIR__ . '/resources/views' => resource_path('views/vendor/subscriptions'),
                 __DIR__ . '/config' => config_path(),
                 __DIR__ . '/database/seeds' => database_path('seeds'),
-            ], 'package-subscriptions');
+                __DIR__ . '/resources/views' => resource_path('views/vendor/subscriptions'),
+            ], 'subscriptions');
         }
     }
 
