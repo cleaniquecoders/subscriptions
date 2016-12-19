@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'model' => 'App\User';
+    'model' => 'App\User',
     'enum' => [
         'status' => [
             'Inactive',
