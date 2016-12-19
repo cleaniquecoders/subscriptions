@@ -31,6 +31,10 @@ php artisan subscription:install
 
 ## Usage
 
+### Seeder
+
+Open up `database/seeds/PackageSeeder.php` and update your SaaS Packages accordingly and run `php artisan db:seed --class=PackageSeeder`.
+
 ### Trait
 
 You may add `use CleaniqueCoders\Traits\Subscriptions\User as Subscription;` in your `User` model class to enable relationship between user and subscribed package.

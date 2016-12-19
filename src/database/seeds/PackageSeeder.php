@@ -1,6 +1,6 @@
 <?php
 
-use CleaniqueCoders\Subscriptions\Subscriptions\Subscription;
+use CleaniqueCoders\Subscriptions\Subscription;
 use Illuminate\Database\Seeder;
 
 class PackageSeeder extends Seeder
