@@ -1,5 +1,5 @@
 <div class="row product-list center-block">
-   @foreach($packages as $package)
+   @foreach($subscriptions as $subscription)
 
 	<div class="col-md-4 col-sm-6 product-item">
         <div class="product-container">
@@ -12,21 +12,21 @@
 
             <div class="row">
                 <div class="col-xs-8">
-                    <h2><a href="#">{{ $package->name }}</a></h2></div>
-                <div class="col-xs-4"><a href="#" class="small-text">{{ $package->label }} </a></div>
+                    <h2><a href="#">{{ $subscription->name }}</a></h2></div>
+                <div class="col-xs-4"><a href="#" class="small-text">{{ $subscription->label }} </a></div>
             </div>
 
             {{-- <div class="product-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i><a href="#" class="small-text">82 reviews</a></div> --}}
 
             <div class="row">
                 <div class="col-xs-12">
-                    <p class="product-description">{{ $package->details }}</p>
+                    <p class="product-description">{{ $subscription->details }}</p>
                     <div class="row">
                         <div class="col-xs-6">
-                            <a class="btn btn-default" href="{{ route('packages.subscribe', [ 'id' => $package->id ]) }}">Subscribe Now!</a>
+                            <a class="btn btn-default" href="{{ route('subscriptions.subscribe', [ 'id' => $subscription->id ]) }}">Subscribe Now!</a>
                         </div>
                         <div class="col-xs-6">
-                            <p class="product-price">{{ config('package.currency') }} {{ $package->price }}</p>
+                            <p class="product-price">{{ config('subscriptions.currency') }} {{ $subscription->price }}</p>
                         </div>
                     </div>
                 </div>

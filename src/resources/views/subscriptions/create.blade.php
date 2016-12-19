@@ -6,13 +6,13 @@
 <div class="container">
   <div class="panel panel-default">
     <div class="panel-body">
-      {!! Form::open(['route' => 'packages.store', 'method' => 'POST', 'class' => 'form-horizontal']) !!}
+      {!! Form::open(['route' => 'subscriptions.store', 'method' => 'POST', 'class' => 'form-horizontal']) !!}
       <fieldset>
 
       {!! Form::token() !!}
 
       <!-- Form Name -->
-      <legend>New Package Details</legend>
+      <legend>New Subscription Details</legend>
 
       <!-- Text input-->
        <div class="form-group">
@@ -70,7 +70,7 @@
         <label class="col-md-4 control-label" for="submit"></label>
         <div class="col-md-8">
           <button id="submit" name="submit" class="btn btn-success">Create</button>
-          <a href="{{ url('/packages') }}" class="btn btn-danger">Cancel</a>
+          <a href="{{ route('subscriptions.index') }}" class="btn btn-danger">Cancel</a>
         </div>
       </div>
 

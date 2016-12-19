@@ -9,7 +9,7 @@
 				<h3 class="warning">You're not subscribed yet. Please choose your subscription.</h3>
 			</div>
 			<div class="panel-body">
-				@include('packages.components.display', ['packages' => $packages])
+				@include('components.display', ['subscriptions' => $subscriptions])
 			</div>
 		</div>
 	</div>

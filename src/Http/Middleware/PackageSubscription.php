@@ -4,6 +4,7 @@ namespace CleaniqueCoders\Subscriptions\Http\Middleware;
 
 use Auth;
 use Carbon\Carbon;
+use CleaniqueCoders\Subscriptions\SubscriptionUser;
 use Closure;
 
 class PackageSubscription
@@ -17,7 +18,7 @@ class PackageSubscription
      */
     public function handle($request, Closure $next)
     {
-        $exist = PackageUser::where('status', 1)
+        $exist = SubscriptionUser::where('status', 1)
             ->where('user_id', Auth::user()->id)->first();
 
         if (empty($exist)) {

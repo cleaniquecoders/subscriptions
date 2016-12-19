@@ -19,7 +19,7 @@ class SubscriptionController extends Controller
     public function index()
     {
         $subscriptions = Subscription::orderby('created_at', 'desc')->paginate(10);
-        return view('subscriptions:subscriptions.index', compact('subscriptions'));
+        return view('subscriptions.index', compact('subscriptions'));
     }
 
     /**
@@ -29,7 +29,7 @@ class SubscriptionController extends Controller
      */
     public function create()
     {
-        return view('subscriptions:subscriptions.create');
+        return view('subscriptions.create');
     }
 
     /**
@@ -53,7 +53,7 @@ class SubscriptionController extends Controller
     public function show($id)
     {
         $subscription = Subscription::find($id);
-        return view('subscriptions:subscriptions.show', compact('subscription'));
+        return view('subscriptions.show', compact('subscription'));
     }
 
     /**
@@ -65,7 +65,7 @@ class SubscriptionController extends Controller
     public function edit($id)
     {
         $subscription = Subscription::find($id);
-        return view('subscriptions:subscriptions.edit', compact('subscription'));
+        return view('subscriptions.edit', compact('subscription'));
     }
 
     /**
@@ -122,12 +122,12 @@ class SubscriptionController extends Controller
     public function unsubscribed()
     {
         $subscriptions = Subscription::where('status', 1)->get();
-        return view('subscriptions:subscriptions.unsubscribed', compact('subscriptions'));
+        return view('subscriptions.unsubscribed', compact('subscriptions'));
     }
 
     public function expired()
     {
         $subscriptions = Subscription::where('status', 1)->get();
-        return view('subscriptions:subscriptions.expired', compact('subscriptions'));
+        return view('subscriptions.expired', compact('subscriptions'));
     }
 }
