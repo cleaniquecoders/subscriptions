@@ -4,6 +4,8 @@ Tell people about your package
 
 ## Installation
 
+Require the package by running the following command:
+
 ```
 composer require cleaniquecoders/subscriptions
 ```
@@ -20,16 +22,25 @@ Register Subscriptions Middleware in `app\Http\Kernel.php`
 'subscription' => \CleaniqueCoders\Subscriptions\Http\Middleware\PackageSubscription::class,
 ```
 
-Publish package configurations and views:
+Run the following command to register all the subscription routes in `routes/web.php` and publish the `config/subscription.php`, `subscriptions` views and 
+`seeds`.
 
 ```
-php artisan vendor:publish --tag=splate-subscriptions
+php artisan subscription:install
 ```
 
 ## Usage
 
-```
-How to use your package?
+### Trait
+
+You may add `use CleaniqueCoders\Traits\Subscriptions\User as Subscription;` in your `User` model class to enable relationship between user and subscribed package.
+
+### Middleware
+
+```php
+Route::group(['middleware' => ['auth', 'subscription']], function () {
+            Route::resource('secrets', 'YourSecretController');
+});
 ```
 
 ## License
