@@ -40,7 +40,7 @@ class Subscription extends Command
         // set route
         file_put_contents(
             base_path('routes/web.php'),
-            PHP_EOL . '\CleaniqueCoders\Subscription\Routes\Subscription::routes()' . PHP_EOL,
+            PHP_EOL . '\CleaniqueCoders\Subscriptions\Routes\Subscription::routes();' . PHP_EOL,
             FILE_APPEND
         );
 
@@ -51,7 +51,7 @@ class Subscription extends Command
 
         // migrate & seed
         $this->call('migrate', [
-            'seed' => true,
+            '--seed' => true,
         ]);
 
         $this->info('Subscription package installed.');

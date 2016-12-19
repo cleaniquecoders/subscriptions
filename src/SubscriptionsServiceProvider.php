@@ -26,7 +26,7 @@ class SubscriptionsServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/config' => config_path(),
                 __DIR__ . '/database/seeds' => database_path('seeds'),
-                __DIR__ . '/resources/views' => resource_path('views/vendor/subscriptions'),
+                __DIR__ . '/resources/views/subscriptions' => resource_path('views/subscriptions'),
             ], 'subscriptions');
         }
     }
