@@ -19,7 +19,7 @@ class SubscriptionsServiceProvider extends ServiceProvider
 
             if ($this->app->environment('local', 'staging')) {
                 $this->commands([
-                    \CleaniqueCoders\Subscription\Console\Commands\Subscription::class,
+                    \CleaniqueCoders\Subscriptions\Console\Commands\Subscription::class,
                 ]);
             }
 

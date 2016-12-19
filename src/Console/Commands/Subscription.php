@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\Subscription\Console\Commands;
+namespace CleaniqueCoders\Subscriptions\Console\Commands;
 
 use Illuminate\Console\Command;
 
