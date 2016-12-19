@@ -96,9 +96,9 @@ class SubscriptionController extends Controller
     public function subscribe(Request $request, $id)
     {
         if ($this->subscribeUser($id)) {
-            return redirect(config('subscription.redirect.success'));
+            return redirect(config('subscriptions.redirect.success'));
         } else {
-            return redirect(config('subscription.redirect.failed'));
+            return redirect(config('subscriptions.redirect.failed'));
         }
     }
 
